@@ -8,9 +8,8 @@ import Image from "next/image"
 
 const navLinks = [
   { href: "#inicio", label: "Início" },
+  { href: "#propostas", label: "Missão" },
   { href: "#sobre", label: "Redes Sociais" },
- 
-  
 ]
 
 export function Navbar() {
@@ -57,7 +56,7 @@ export function Navbar() {
               </span>
 
               <span className="text-xs uppercase tracking-widest text-yellow-300">
-              Candidato
+              Pré-candidato Deputado Estadual
               </span>
             </div>
           </a>

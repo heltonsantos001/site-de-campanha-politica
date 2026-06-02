@@ -1,21 +1,39 @@
 import {
   Instagram,
-  Facebook,
-  Youtube,
-  MessageCircle,
+  Linkedin,
   Mail,
-  Phone,
-  MapPin,
-} from "lucide-react"
+  Music2,
+} from 
+
+"lucide-react"
 
 const footerLinks = {
   navigation: [
     { label: "Início", href: "#inicio" },
-    { label: "Sobre", href: "#sobre" }
+    { label: "Sobre", href: "#sobre" },
   ],
+
   social: [
-    { icon: Instagram, href: "https://www.instagram.com/felipedantas.of?igsh=MWRjdDFwbWhiOWl5MQ%3D%3D&utm_source=qr", label: "Instagram" },
-    
+    {
+      icon: Instagram,
+      href: "https://www.instagram.com/felipedantas.of?igsh=MWRjdDFwbWhiOWl5MQ%3D%3D&utm_source=qr",
+      label: "Instagram",
+    },
+    {
+      icon: Linkedin,
+      href: "https://www.linkedin.com/in/felipe-dantas",
+      label: "LinkedIn",
+    },
+    {
+      icon: Mail,
+      href: "https://mail.google.com/mail/?view=cm&fs=1&to=mkt.felipedantasof@email.com&su=Contato%20pelo%20site",
+      label: "Email",
+    },
+    {
+      icon: Music2,
+      href: "https://www.tiktok.com/@felipedantas.of?is_from_webapp=1&sender_device=pc",
+      label: "TikTok",
+    },
   ],
 }
 
@@ -80,9 +98,17 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="py-6 border-t border-primary-foreground/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-primary-foreground/60 text-sm text-center sm:text-left">
-            © {currentYear} Desenvolvido Por <a href="https://www.linkedin.com/in/helton-santos001">Helton Santos</a>
-          </p>
+        <p className="text-primary-foreground/60 text-sm text-center sm:text-left">
+  © {currentYear} Desenvolvido Por{" "}
+  <a
+    href="https://www.linkedin.com/in/helton-santos001"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="border-b border-current hover:text-accent transition-colors"
+  >
+    Helton Santos
+  </a>
+</p>
          
         </div>
       </div>
