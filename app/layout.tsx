@@ -20,7 +20,8 @@ export const metadata: Metadata = {
   keywords: ['template político', 'campanha eleitoral', 'website político', 'protótipo'],
   openGraph: {
     title: 'Felipe Dantas | Político',
-    description: 'Template profissional para website político. Personalize com suas informações.',
+   description:
+  "Conheça Felipe Dantas, sua trajetória, missão e compromisso com a população. Acompanhe propostas, ações e iniciativas voltadas ao desenvolvimento, inclusão e bem-estar da sociedade.",
     type: 'website',
   },
   icons: {
