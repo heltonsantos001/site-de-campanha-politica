@@ -26,11 +26,11 @@ const socialLinks = [
     href: "https://www.linkedin.com/in/felipe-dantas",
   },
   {
-  icon: Mail,
-  name: "Email",
-  user: "mkt.felipedantasof@email.com",
-  href: "https://mail.google.com/mail/?view=cm&fs=1&to=mkt.felipedantasof@email.com&su=Contato%20pelo%20site",
-},
+    icon: Mail,
+    name: "Email",
+    user: "mkt.felipedantasof@email.com",
+    href: "https://mail.google.com/mail/?view=cm&fs=1&to=mkt.felipedantasof@email.com&su=Contato%20pelo%20site",
+  },
   {
     icon: Music2,
     name: "TikTok",
@@ -64,9 +64,9 @@ export function AboutSection() {
     <section
       ref={sectionRef}
       id="sobre"
-      className="relative min-h-screen overflow-hidden bg-gradient-to-br from-green-50 via-white to-yellow-50"
+      className="relative overflow-hidden bg-gradient-to-br from-green-50 via-white to-yellow-50"
     >
-      {/* textura */}
+      {/* Fundo */}
       <div
         className="absolute inset-0 opacity-70"
         style={{
@@ -78,28 +78,44 @@ export function AboutSection() {
         }}
       />
 
-      <div className="relative z-10 grid min-h-screen lg:grid-cols-2">
-
-        {/* ESQUERDA */}
+      <div className="relative z-10 grid lg:min-h-screen lg:grid-cols-2">
+        {/* IMAGEM */}
         <div
-          className={`flex items-center justify-center px-8 transition-all duration-1000 lg:px-20 ${
+          className={`order-first lg:order-last relative flex items-center justify-center overflow-hidden px-6 py-10 transition-all duration-1000 delay-200 ${
+            isVisible
+              ? "translate-x-0 opacity-100"
+              : "translate-x-10 opacity-0"
+          }`}
+        >
+          <div className="absolute h-[350px] w-[350px] rounded-full bg-yellow-300/20 blur-3xl sm:h-[500px] sm:w-[500px] lg:h-[750px] lg:w-[750px]" />
+
+          <Image
+            src={logo}
+            alt="Logo Felipe Dantas"
+            priority
+            className="relative w-full max-w-[280px] object-contain drop-shadow-2xl sm:max-w-[420px] lg:max-w-[950px]"
+          />
+        </div>
+
+        {/* REDES */}
+        <div
+          className={`flex items-center justify-center px-6 transition-all duration-1000 lg:px-20 ${
             isVisible
               ? "translate-x-0 opacity-100"
               : "-translate-x-10 opacity-0"
           }`}
         >
-          <div className="w-full max-w-md py-16">
-
-            <div className="mb-10">
+          <div className="w-full max-w-md py-12 lg:py-16">
+            <div className="mb-10 text-center lg:text-left">
               <span className="text-sm uppercase tracking-[0.3em] text-green-700/70">
                 Redes Oficiais
               </span>
 
-              <h2 className="mt-4 text-5xl font-black leading-none text-green-900">
+              <h2 className="mt-4 text-4xl font-black leading-none text-green-900 sm:text-5xl">
                 Conecte-se
               </h2>
 
-              <p className="mt-4 leading-relaxed text-neutral-700">
+              <p className="mt-4 text-sm leading-relaxed text-neutral-700 sm:text-base">
                 Acompanhe conteúdos, propostas e atualizações nas redes sociais.
               </p>
             </div>
@@ -114,22 +130,21 @@ export function AboutSection() {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group relative flex items-center justify-between overflow-hidden rounded-[28px] border border-green-200 bg-white/80 p-5 backdrop-blur-xl transition-all duration-300 hover:scale-[1.02] hover:border-yellow-400 hover:shadow-2xl"
+                    className="group relative flex items-center justify-between overflow-hidden rounded-3xl border border-green-200 bg-white/80 p-4 backdrop-blur-xl transition-all duration-300 hover:border-yellow-400 hover:shadow-2xl sm:p-5"
                   >
-                    {/* brilho */}
                     <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-yellow-100/40 to-transparent opacity-0 transition-all duration-500 group-hover:translate-x-full group-hover:opacity-100" />
 
-                    <div className="relative z-10 flex items-center gap-5">
-                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-green-700 text-white shadow-lg">
+                    <div className="relative z-10 flex items-center gap-4 sm:gap-5">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-green-700 text-white shadow-lg sm:h-14 sm:w-14">
                         <Icon className="h-5 w-5" />
                       </div>
 
                       <div>
-                        <p className="text-lg font-semibold text-green-900">
+                        <p className="text-base font-semibold text-green-900 sm:text-lg">
                           {item.name}
                         </p>
 
-                        <p className="text-sm text-neutral-600">
+                        <p className="text-xs text-neutral-600 sm:text-sm">
                           {item.user}
                         </p>
                       </div>
@@ -141,25 +156,6 @@ export function AboutSection() {
               })}
             </div>
           </div>
-        </div>
-
-        {/* DIREITA */}
-        <div
-          className={`relative flex items-center justify-center overflow-hidden transition-all duration-1000 delay-200 ${
-            isVisible
-              ? "translate-x-0 opacity-100"
-              : "translate-x-10 opacity-0"
-          }`}
-        >
-          {/* glow */}
-          <div className="absolute h-[750px] w-[750px] rounded-full bg-yellow-300/20 blur-3xl" />
-
-          <Image
-            src={logo}
-            alt="Logo Felipe Dantas"
-            priority
-            className="relative w-[90%] max-w-[950px] object-contain drop-shadow-2xl"
-          />
         </div>
       </div>
     </section>
